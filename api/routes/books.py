@@ -49,7 +49,7 @@ async def get_books() -> OrderedDict[int, Book]:
     return db.get_books()
 
 
-# route to get a specific book by add
+# route to get a specific book by the id in /{book_id}
 @router.get("/{book_id}", response_model=Book, status_code=status.HTTP_200_OK)
 async def get_book(book_id: int):
     book = db.get_book(book_id)
